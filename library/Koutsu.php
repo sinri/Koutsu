@@ -96,7 +96,7 @@ class Koutsu
             foreach ($changed as $changed_socket) {
 
                 //check for any incomming data
-                while (socket_recv($changed_socket, $buf, 1024, 0) >= 1) {
+                while (socket_recv($changed_socket, $buf, 10240, 0) >= 1) {
                     $received_text = $this->unmask($buf); //unmask data
                     $tst_msg = json_decode($received_text, true); //json decode
                     $user_name = $this->helper->safeReadArray($tst_msg, 'name', '__UNKNOWN__');

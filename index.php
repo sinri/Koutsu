@@ -100,8 +100,13 @@ if (isset($_REQUEST['name'])) {
                     name: myname,
                     color: '<?php echo $colours[$user_colour]; ?>'
                 };
+                var msg_json = JSON.stringify(msg);
+                if (msg_json.length > 5120) {
+                    alert('Too many chars to send!');
+                    return;
+                }
                 //convert and send data to server
-                websocket.send(JSON.stringify(msg));
+                websocket.send(msg_json);
             });
 
             //#### Message received from server?
