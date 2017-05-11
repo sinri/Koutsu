@@ -6,9 +6,9 @@
  * Time: 14:45
  */
 
-$host = 'jp.sinri.cc'; //host
+$host = 'conoha.sinri.cc'; //host
 $port = '10874'; //port
 
-$servicePath = 'jp.sinri.cc:10874/koutsu/KoutsuHandler.php';
+$servicePath = 'conoha.sinri.cc:10874/koutsu/KoutsuHandler.php';
 
 $logDir = '/var/log/sinri_koutsu';

@@ -11,4 +11,4 @@ php -q KoutsuHandler.php
 
 2. run `index.php` in Browser
 
-http://jp.sinri.cc/koutsu/index.php
+http://conoha.sinri.cc/koutsu/index.php
