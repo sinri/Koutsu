@@ -175,7 +175,7 @@ class Koutsu
             "Upgrade: websocket\r\n" .
             "Connection: Upgrade\r\n" .
             "WebSocket-Origin: $host\r\n" .
-            "WebSocket-Location: ws://{$this->servicePath}\r\n" .
+            "WebSocket-Location: {$this->servicePath}\r\n" .
             "Sec-WebSocket-Accept:$secAccept\r\n\r\n";
         socket_write($client_conn, $upgrade, strlen($upgrade));
     }

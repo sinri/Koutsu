@@ -9,6 +9,6 @@
 $host = 'conoha.sinri.cc'; //host
 $port = '10874'; //port
 
-$servicePath = 'conoha.sinri.cc:10874/koutsu/KoutsuHandler.php';
+$servicePath = 'wss://' . $host . ':' . $port . '/koutsu/KoutsuHandler.php';
 
 $logDir = '/var/log/sinri_koutsu';

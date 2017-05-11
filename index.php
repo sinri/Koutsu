@@ -36,7 +36,7 @@ if (isset($_REQUEST['name'])) {
     <script language="javascript" type="text/javascript">
         $(document).ready(function () {
             //create a new WebSocket object.
-            var wsUri = "ws://<?php echo $servicePath; ?>";
+            var wsUri = "<?php echo $servicePath; ?>";
             websocket = new WebSocket(wsUri);
 
             websocket.onopen = function (ev) { // connection is open
