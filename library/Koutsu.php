@@ -8,8 +8,7 @@
 
 namespace sinri\koutsu\library;
 
-
-use sinri\enoch\helper\CommonHelper;
+use sinri\ark\core\ArkHelper;
 
 class Koutsu
 {
@@ -21,13 +20,12 @@ class Koutsu
     protected $socket;
     protected $clients;
 
-    protected $helper;
-
     /**
      * Koutsu constructor.
      * @param string $host
      * @param string $port
      * @param StandardKoutsuWorker $worker
+     * @param string $servicePath
      */
     public function __construct($host, $port, $worker, $servicePath)
     {
@@ -35,7 +33,6 @@ class Koutsu
         $this->port = $port;
         $this->worker = $worker;
         $this->servicePath = $servicePath;
-        $this->helper = new CommonHelper();
     }
 
     public function reset()
@@ -95,13 +92,13 @@ class Koutsu
             //loop through all connected sockets
             foreach ($changed as $changed_socket) {
 
-                //check for any incomming data
+                //check for any incoming data
                 while (socket_recv($changed_socket, $buf, 10240, 0) >= 1) {
                     $received_text = $this->unmask($buf); //unmask data
                     $tst_msg = json_decode($received_text, true); //json decode
-                    $user_name = $this->helper->safeReadArray($tst_msg, 'name', '__UNKNOWN__');
-                    $user_message = $this->helper->safeReadArray($tst_msg, 'message', '__EMPTY__');
-                    $user_color = $this->helper->safeReadArray($tst_msg, 'color', '#222222');
+                    $user_name = ArkHelper::readTarget($tst_msg, 'name', '__UNKNOWN__');
+                    $user_message = ArkHelper::readTarget($tst_msg, 'message', '__EMPTY__');
+                    $user_color = ArkHelper::readTarget($tst_msg, 'color', '#222222');
 
                     socket_getpeername($changed_socket, $ip); //get ip address of connected socket
 
@@ -157,10 +154,17 @@ class Koutsu
     }
 
     //handshake new client.
-    protected function perform_handshaking($receved_header, $client_conn, $host, $port)
+
+    /**
+     * @param $received_header
+     * @param $client_conn
+     * @param $host
+     * @param $port
+     */
+    protected function perform_handshaking($received_header, $client_conn, $host, $port)
     {
         $headers = array();
-        $lines = preg_split("/\r\n/", $receved_header);
+        $lines = preg_split("/\r\n/", $received_header);
         foreach ($lines as $line) {
             $line = chop($line);
             if (preg_match('/\A(\S+): (.*)\z/', $line, $matches)) {

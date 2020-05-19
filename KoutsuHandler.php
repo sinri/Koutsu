@@ -5,6 +5,10 @@
  * Date: 2017/5/11
  * Time: 14:45
  */
+
+use sinri\koutsu\library\Koutsu;
+use sinri\koutsu\library\StandardKoutsuWorker;
+
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/library/StandardKoutsuWorker.php';
 require_once __DIR__ . '/library/Koutsu.php';
@@ -12,6 +16,6 @@ require_once __DIR__ . '/config.php';
 
 date_default_timezone_set("Asia/Shanghai");
 
-$worker = new \sinri\koutsu\library\StandardKoutsuWorker($logDir);
-$koutsu = new \sinri\koutsu\library\Koutsu($host, $port, $worker, $servicePath);
+$worker = new StandardKoutsuWorker($logDir);
+$koutsu = new Koutsu($host, $port, $worker, $servicePath);
 $koutsu->run();

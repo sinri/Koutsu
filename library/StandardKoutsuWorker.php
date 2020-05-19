@@ -8,8 +8,7 @@
 
 namespace sinri\koutsu\library;
 
-
-use sinri\enoch\core\LibLog;
+use sinri\ark\core\ArkLogger;
 
 class StandardKoutsuWorker
 {
@@ -27,7 +26,7 @@ class StandardKoutsuWorker
             @mkdir($this->logDirPath, 0777, true);
         }
 
-        $this->logger = new LibLog($this->logDirPath, 'Koutsu');
+        $this->logger = new ArkLogger($this->logDirPath, 'Koutsu');
     }
 
     public function processNewSocket($ip, $header, $standard_response)
@@ -54,6 +53,6 @@ class StandardKoutsuWorker
     public function log($text, $obj = null)
     {
         //echo "[" . date('Y-m-d H:i:s') . "] " . $text . PHP_EOL;
-        $this->logger->log(LibLog::LOG_INFO, $text, $obj);
+        $this->logger->info($text, $obj);
     }
 }

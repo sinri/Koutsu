@@ -10,7 +10,15 @@
     }
   ],
   "require": {
-    "sinri/enoch": "^1.0",
-    "components/jquery": "^2.0"
+    "sinri/ark-core": "^1.0",
+    "components/jquery": "^2.0",
+    "ext-sockets": "*",
+    "ext-json": "*"
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    }
   }
 }

@@ -9,6 +9,8 @@
 $host = 'conoha.sinri.cc'; //host
 $port = '10874'; //port
 
-$servicePath = 'wss://' . $host . ':' . $port . '/koutsu/KoutsuHandler.php';
+// this is mainly for the frontend to initialize the WebSocket instance
+$servicePath = 'ws://' . $host . ':' . $port . '/koutsu/KoutsuHandler.php';
+//$servicePath = 'wss://' . $host . '/koutsu/KoutsuHandler.php';
 
 $logDir = '/var/log/sinri_koutsu';
