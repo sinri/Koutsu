@@ -37,15 +37,15 @@ class Koutsu
 
     public function reset()
     {
-        //Create TCP/IP sream socket
+        //Create TCP/IP stream socket
         $this->socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-        //reuseable port
+        //reusable port
         socket_set_option($this->socket, SOL_SOCKET, SO_REUSEADDR, 1);
         //bind socket to specified host
         socket_bind($this->socket, 0, $this->port);
         //listen to port
         socket_listen($this->socket);
-        //create & add listning socket to the list
+        //create & add listening socket to the list
         $this->clients = array($this->socket);
     }
 
@@ -55,20 +55,21 @@ class Koutsu
 
         //start endless loop, so that our script doesn't stop
         while (true) {
-            //manage multipal connections
+            //manage multiple connections
             $changed = $this->clients;
             //returns the socket resources in $changed array
             socket_select($changed, $null, $null, 0, 10);
 
             //check for new socket
             if (in_array($this->socket, $changed)) {
-                $socket_new = socket_accept($this->socket); //accpet new socket
+                $socket_new = socket_accept($this->socket); //accept new socket
                 $this->clients[] = $socket_new; //add socket to client array
 
                 $header = socket_read($socket_new, 1024); //read data sent by the socket
                 $this->perform_handshaking($header, $socket_new, $this->host, $this->port); //perform websocket handshake
 
                 socket_getpeername($socket_new, $ip); //get ip address of connected socket
+                // a base response
                 $response = json_encode(
                     array(
                         'time' => date('Y-m-d H:i:s'),
@@ -172,14 +173,14 @@ class Koutsu
             }
         }
 
-        $secKey = $headers['Sec-WebSocket-Key'];
+        $secKey = ArkHelper::readTarget($headers, ['Sec-WebSocket-Key']);
         $secAccept = base64_encode(pack('H*', sha1($secKey . '258EAFA5-E914-47DA-95CA-C5AB0DC85B11')));
         //hand shaking header
         $upgrade = "HTTP/1.1 101 Web Socket Protocol Handshake\r\n" .
             "Upgrade: websocket\r\n" .
             "Connection: Upgrade\r\n" .
-            "WebSocket-Origin: $host\r\n" .
-            "WebSocket-Location: {$this->servicePath}\r\n" .
+            "Sec-WebSocket-Origin: $host\r\n" .
+            "Sec-WebSocket-Location: {$this->servicePath}\r\n" .
             "Sec-WebSocket-Accept:$secAccept\r\n\r\n";
         socket_write($client_conn, $upgrade, strlen($upgrade));
     }
