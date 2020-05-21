@@ -6,16 +6,27 @@
  * Time: 14:45
  */
 
-use sinri\koutsu\library\Koutsu;
-use sinri\koutsu\library\StandardKoutsuWorker;
+use Psr\Log\LogLevel;
+use sinri\ark\core\ArkLogger;
+use sinri\ark\websocket\ArkWebSocketConnections;
+use sinri\ark\websocket\ArkWebSocketDaemon;
+use sinri\koutsu\implementation\KoutsuWorker;
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/library/StandardKoutsuWorker.php';
-require_once __DIR__ . '/library/Koutsu.php';
 require_once __DIR__ . '/config.php';
 
 date_default_timezone_set("Asia/Shanghai");
 
-$worker = new StandardKoutsuWorker($logDir);
-$koutsu = new Koutsu($host, $port, $worker, $servicePath);
-$koutsu->run();
+$logger = new ArkLogger(__DIR__ . '/log', 'daemon');
+$logger->setIgnoreLevel(LogLevel::DEBUG);
+$logger->removeCurrentLogFile();
+
+$connections = new ArkWebSocketConnections();
+
+$worker = new KoutsuWorker($connections, $logger);
+$koutsu = new ArkWebSocketDaemon($host, $port, $servicePath, $worker, $connections, $logger);
+try {
+    $koutsu->loop();
+} catch (Exception $e) {
+    $logger->error($e->getMessage());
+}

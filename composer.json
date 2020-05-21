@@ -10,10 +10,15 @@
     }
   ],
   "require": {
-    "sinri/ark-core": "^1.0",
+    "sinri/ark-websocket": "~0.1",
     "components/jquery": "^2.0",
     "ext-sockets": "*",
     "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "sinri\\koutsu\\": ""
+    }
   },
   "repositories": {
     "packagist": {

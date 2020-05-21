@@ -180,7 +180,9 @@ if (isset($_REQUEST['name'])) {
     <!--        </div>-->
     <!--    </div>-->
     <div style="color: #0a86fb;text-align: center;">
-        Copyright 2017 Sinri Edogawa. Licensed GPL-3.0. <a href="https://github.com/sinri/Koutsu">View on GitHub!</a>
+        <p>Copyright 2020 Sinri Edogawa. Licensed GPL-3.0.</p>
+        <p><a href="https://github.com/sinri/Koutsu">View on GitHub!</a></p>
+        <p><a href="https://github.com/sinri/Ark-WebSocket">Powered by Ark and WebSocket Component</a></p>
     </div>
 </div>
 <script>

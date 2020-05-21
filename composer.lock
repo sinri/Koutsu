@@ -1,31 +1,31 @@
 {
-  "_readme": [
-    "This file locks the dependencies of your project to a known state",
-    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-    "This file is @generated automatically"
-  ],
-  "content-hash": "ef2bf2cb03928f50841cc8781d100bb1",
-  "packages": [
-    {
-      "name": "components/jquery",
-      "version": "2.2.4",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/components/jquery.git",
-        "reference": "981036fcb56668433a7eb0d1e71190324b4574df"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/components/jquery/zipball/981036fcb56668433a7eb0d1e71190324b4574df",
-        "reference": "981036fcb56668433a7eb0d1e71190324b4574df",
-        "shasum": "",
-        "mirrors": [
-          {
-            "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-            "preferred": true
-          }
-        ]
-      },
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b226e87d3f1be530197a0d4dec2ce32f",
+    "packages": [
+        {
+            "name": "components/jquery",
+            "version": "2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "981036fcb56668433a7eb0d1e71190324b4574df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/981036fcb56668433a7eb0d1e71190324b4574df",
+                "reference": "981036fcb56668433a7eb0d1e71190324b4574df",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
             "type": "component",
             "extra": {
                 "component": {
@@ -52,104 +52,146 @@
             ],
             "description": "jQuery JavaScript Library",
             "homepage": "http://jquery.com",
-      "time": "2016-05-25T06:43:59+00:00"
+            "time": "2016-05-25T06:43:59+00:00"
         },
-    {
-      "name": "psr/log",
-      "version": "1.1.3",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/php-fig/log.git",
-        "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
-        "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
-        "shasum": "",
-        "mirrors": [
-          {
-            "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-            "preferred": true
-          }
-        ]
-      },
-      "require": {
-        "php": ">=5.3.0"
-      },
-      "type": "library",
-      "extra": {
-        "branch-alias": {
-          "dev-master": "1.1.x-dev"
-        }
-      },
-      "autoload": {
-        "psr-4": {
-          "Psr\\Log\\": "Psr/Log/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
         {
-          "name": "PHP-FIG",
-          "homepage": "http://www.php-fig.org/"
-        }
-      ],
-      "description": "Common interface for logging libraries",
-      "homepage": "https://github.com/php-fig/log",
-      "keywords": [
-        "log",
-        "psr",
-        "psr-3"
-      ],
-      "time": "2020-03-23T09:12:05+00:00"
-    },
-    {
-      "name": "sinri/ark-core",
-      "version": "1.2",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/sinri/Ark-Core.git",
-        "reference": "c272dd894883a820874b690cbf9d7a88b1c8ad68"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/sinri/Ark-Core/zipball/c272dd894883a820874b690cbf9d7a88b1c8ad68",
-        "reference": "c272dd894883a820874b690cbf9d7a88b1c8ad68",
-        "shasum": "",
-        "mirrors": [
-          {
-            "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-            "preferred": true
-          }
-        ]
-      },
-      "require": {
-        "ext-json": "*",
-        "psr/log": "~1.0"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-4": {
-          "sinri\\ark\\core\\": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
+            "name": "psr/log",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2020-03-23T09:12:05+00:00"
+        },
         {
-          "name": "Sinri Edogawa",
-          "email": "e.joshua.s.e@gmail.com"
+            "name": "sinri/ark-core",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sinri/Ark-Core.git",
+                "reference": "2c6191e9a6ba60792f190b26ab1a791131336f94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sinri/Ark-Core/zipball/2c6191e9a6ba60792f190b26ab1a791131336f94",
+                "reference": "2c6191e9a6ba60792f190b26ab1a791131336f94",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "psr/log": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "sinri\\ark\\core\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sinri Edogawa",
+                    "email": "e.joshua.s.e@gmail.com"
+                }
+            ],
+            "description": "The core components of Ark 2",
+            "time": "2020-04-29T03:11:54+00:00"
+        },
+        {
+            "name": "sinri/ark-websocket",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sinri/Ark-WebSocket.git",
+                "reference": "f0b93fad1e77c01f324d4bb1140a62165ffcb79d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sinri/Ark-WebSocket/zipball/f0b93fad1e77c01f324d4bb1140a62165ffcb79d",
+                "reference": "f0b93fad1e77c01f324d4bb1140a62165ffcb79d",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "sinri/ark-core": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "sinri\\ark\\websocket\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sinri Edogawa",
+                    "email": "e.joshua.s.e@gmail.com"
+                }
+            ],
+            "description": "Ark WebSocket Component",
+            "time": "2020-05-21T08:23:50+00:00"
         }
-      ],
-      "description": "The core components of Ark 2",
-      "time": "2018-09-12T03:17:10+00:00"
-    }
     ],
     "packages-dev": [],
     "aliases": [],
@@ -157,6 +199,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-sockets": "*",
+        "ext-json": "*"
+    },
     "platform-dev": []
 }
