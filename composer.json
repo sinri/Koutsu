@@ -11,7 +11,7 @@
   ],
   "require": {
     "sinri/ark-core": "^1.0",
-    "components/jquery": "^2.0",
+    "components/jquery": "^3.5",
     "ext-sockets": "*",
     "ext-json": "*"
   },
